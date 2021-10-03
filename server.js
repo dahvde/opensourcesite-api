@@ -1,13 +1,14 @@
 const express = require("express");
 const {success} = require("consola");
 const server = express();
+const {PORT} = require("./config")
 const app = require("./index.js")
 
 server.use(app);
 
-server.listen(3000, () => {
+server.listen(PORT, () => {
   success({
-    message: "[SERVER] listening on port 3000",
+    message: "[SERVER] listening on port " + PORT,
     badge: true
   })
 })
